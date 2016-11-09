@@ -1,0 +1,10 @@
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\CSOpenGL1.exe.config
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\CSOpenGL1.exe
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\CSOpenGL1.pdb
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\OpenTK.dll
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\OpenTK.xml
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\obj\Debug\CSOpenGL1.csprojResolveAssemblyReference.cache
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\obj\Debug\CSOpenGL1.exe
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\obj\Debug\CSOpenGL1.pdb
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\Content\earth.png
+c:\users\krish\documents\visual studio 2015\Projects\CSOpenGL1\CSOpenGL1\bin\Debug\Content\sample_texture_1.jpg
