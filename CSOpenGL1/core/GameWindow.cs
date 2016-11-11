@@ -11,28 +11,35 @@ namespace Engine1Core
 {
     public class GameWindow : OpenTK.GameWindow
     {
-        private List<Texture2D> Textures;
-        private List<TextureLight> TextureLights;
+
+        private List<GameObject> GameObjects;
+
+        //private List<Texture2D> Textures;
+        //private List<TextureLight> TextureLights;
         private View view;
 
         public GameWindow(int w, int h) : base(w, h)
         { 
             GL.Enable(EnableCap.Texture2D);
             view = new View(Vector2.Zero, 1.0, 0.0f);
-            Textures = new List<Texture2D>();
-            TextureLights = new List<TextureLight>();
+
+            GameObjects = new List<GameObject>();
+
+            //Textures = new List<Texture2D>();
+            //TextureLights = new List<TextureLight>();
 
             GameInput.Initialize(this);
         }
 
-        public void AddTexture(string path)
+        public void AddGameObject(GameObject a)
         {
-            Textures.Add(ContentManager.LoadTexture(path));
+            GameObjects.Add(a);
         }
 
-        public void AddTextureLight(float xPos, float yPos, float intensity)
+        public void RemoveGameObject(GameObject a)
         {
-            TextureLights.Add(new TextureLight(new Vector2(xPos, yPos), intensity));
+            while (GameObjects.Contains(a))
+                GameObjects.Remove(a);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -43,6 +50,8 @@ namespace Engine1Core
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
+
+            GameObjects.ForEach(go => go.Tick());
             
             if(GameInput.MousePress(OpenTK.Input.MouseButton.Left))
             {
@@ -65,7 +74,7 @@ namespace Engine1Core
         {
             base.OnRenderFrame(e);
 
-            if (Textures.Count == 0)
+            if (GameObjects.Count == 0)
                 return;
 
             GL.Clear(ClearBufferMask.ColorBufferBit);
@@ -79,9 +88,12 @@ namespace Engine1Core
 
             //SpriteBatch.Draw(Textures[0], new Vector2(pos_x, -100), new Vector2(0.5f, 0.5f), Color.Green, new Vector2(10, 50), TextureLights);
 
-            
+            var lights = GameObjects.Where(go => go.GetType().Equals(typeof(LightSource))).ToList();
+            var objects = GameObjects.Where(go => !go.GetType().Equals(typeof(LightSource))).ToList();
 
-            Textures.ForEach(t => SpriteBatch.Draw(t, Vector2.Zero, new Vector2(1f, 1f), Color.White, new Vector2(0, 0), TextureLights));
+            objects.ForEach(a => a.Draw(lights));
+
+            //Textures.ForEach(t => SpriteBatch.Draw(t, Vector2.Zero, new Vector2(1f, 1f), Color.White, new Vector2(0, 0), TextureLights));
 
             this.SwapBuffers();
         }

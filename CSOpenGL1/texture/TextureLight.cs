@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Engine1Core
 {
-    struct TextureLight
+    public struct TextureLight
     {
         public Vector2 Position { get; set; }
         public float Intensity { get; set; }

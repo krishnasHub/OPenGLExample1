@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actor\Actor.cs" />
+    <Compile Include="actor\GameObject.cs" />
+    <Compile Include="actor\LightSource.cs" />
     <Compile Include="util\Contentmanager.cs" />
     <Compile Include="core\GameInput.cs" />
     <Compile Include="core\GameWindow.cs" />
