@@ -8,7 +8,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System.Drawing;
 
-namespace CSOpenGL1
+namespace Engine1Core
 {
     class SpriteBatch
     {

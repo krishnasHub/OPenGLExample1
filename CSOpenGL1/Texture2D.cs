@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSOpenGL1
+namespace Engine1Core
 {
-    struct Texture2D
+    public struct Texture2D
     {
         
         public int ID { get; set; }

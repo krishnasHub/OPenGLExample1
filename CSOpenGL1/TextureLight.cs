@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSOpenGL1
+namespace Engine1Core
 {
     struct TextureLight
     {
