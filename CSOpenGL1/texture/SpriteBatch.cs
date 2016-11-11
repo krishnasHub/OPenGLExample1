@@ -12,7 +12,7 @@ namespace Engine1Core
 {
     class SpriteBatch
     {
-        public static void Draw(Texture2D texture, Vector2 position, Vector2 scale, Color color, Vector2 origin, TextureLight[] lights = null)
+        public static void Draw(Texture2D texture, Vector2 position, Vector2 scale, Color color, Vector2 origin, List<TextureLight> lights = null)
         {
             Vector2[] vertices = new Vector2[4]
             {
@@ -29,10 +29,10 @@ namespace Engine1Core
 
             for (int i = 0; i < 4; ++i)
             {
-                if(lights != null)
+                if(lights != null && lights.Count > 0)
                 {
                     bool lightFound = false;
-                    for(int j = 0; j < lights.Length; ++j)
+                    for(int j = 0; j < lights.Count; ++j)
                     {
                        // Vector2 lpos = new Vector2(lights[i].Position.X, lights[i].Position.Y);
                         Vector2 vi = new Vector2(vertices[i].X, vertices[i].Y);
